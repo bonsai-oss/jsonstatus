@@ -10,7 +10,7 @@ type Status struct {
 	Message string `json:"message"`
 }
 
-func (s *Status) Encode(w http.ResponseWriter) error {
+func (s Status) Encode(w http.ResponseWriter) error {
 	w.Header().Set("Content-Type", "application/json")
 	return json.NewEncoder(w).Encode(s)
 }
